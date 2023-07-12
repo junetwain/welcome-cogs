@@ -10,7 +10,7 @@ __all__ = ["UNIQUE_ID", "WelcomeCount"]
 
 UNIQUE_ID = 0x6F7951A4
 _DEFAULT_WELCOME = (
-    "Welcome, {mention}, to {server}!\n\n{count} user{plural} joined today!"
+    "Welcome to **希望シリーズ** (Hope Series) Discord, {mention}!\n\n Our <@&994841189482254436> or <@&994787587778695188> will tend to you as soon as we can. We appreciate your patience!n\n{count} user{plural} joined today!"
 )
 
 
