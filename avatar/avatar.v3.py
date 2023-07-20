@@ -30,7 +30,4 @@ class Avatar(commands.Cog):
         # Set the avatar as the image for the embed to display a bigger image
         embed.set_image(url=url)
 
-        # Add a field to display the clickable avatar URL
-        embed.add_field(name="Avatar URL", value=f"[Click Here]({url})")
-
         await ctx.send(embed=embed)
