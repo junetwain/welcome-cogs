@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "Tobo-Cogs"
-version = "0.1.0"
+name = "Jun-Cogs"
+version = "2.4"
 description = ""
-authors = ["Toby Harradine <me@tobyharradine.id.au>"]
+authors = ["Jun"]
 license = "GPL-3.0"
 
 [tool.poetry.dependencies]
