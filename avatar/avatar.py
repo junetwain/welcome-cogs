@@ -22,8 +22,8 @@ class Avatar(commands.Cog):
         # Get the user's name without discriminator
         username_without_discriminator = user.name
 
-        # Create a custom color with RGB values for #A50903 (deep red)
-        custom_color = discord.Color.from_rgb(165, 9, 3)
+        # Create a custom color with RGB values
+        custom_color = discord.Color.from_rgb(231, 0, 255)
 
         embed = Embed(title=f"{username_without_discriminator}", color=custom_color)
 
