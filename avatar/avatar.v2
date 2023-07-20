@@ -17,17 +17,11 @@ class Avatar(commands.Cog):
         if not user:
             user = author
 
-        url = user.avatar.with_format("png")
+        url = user.avatar.with_static_format("png")
 
-        # Get the user's name without discriminator
-        username_without_discriminator = user.name
+        embed = Embed(title=f"{user}'s Avatar", description=f"[Avatar URL]({url})", color=discord.Color.blurple())
 
-        # Create a custom color with RGB values for #A50903 (deep red)
-        custom_color = discord.Color.from_rgb(165, 9, 3)
-
-        embed = Embed(title=f"{username_without_discriminator}'s Avatar", color=custom_color)
-
-        # Set the avatar as the image for the embed to display a bigger image
-        embed.set_image(url=url)
+        # Set the avatar as the thumbnail for the embed (optional)
+        embed.set_thumbnail(url=url)
 
         await ctx.send(embed=embed)
