@@ -25,12 +25,12 @@ class Avatar(commands.Cog):
         # Create a custom color with RGB values for #A50903 (deep red)
         custom_color = discord.Color.from_rgb(165, 9, 3)
 
-        embed = Embed(title=f"{username_without_discriminator}'s Avatar", color=custom_color)
+        embed = Embed(title=f"{username_without_discriminator}", color=custom_color)
 
         # Set the avatar as the image for the embed to display a bigger image
         embed.set_image(url=url)
 
         # Add a field to display the clickable avatar URL
-        embed.add_field(name="Avatar URL", value=f"[Click Here]({url})")
+        embed.add_field(name=f"[Avatar URL]({url})", value="")
 
         await ctx.send(embed=embed)

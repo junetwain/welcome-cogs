@@ -1,9 +1,4 @@
-# Simple avatar URL fetch by Yukirin#0048
-
-# Discord
 import discord
-
-# Red
 from redbot.core import commands
 
 
