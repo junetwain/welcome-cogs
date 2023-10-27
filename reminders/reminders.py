@@ -31,7 +31,7 @@ from .views import ReminderView
 
 _ = Translator("Reminders", __file__)
 
-MAX_REMINDER_LENGTH = 1500
+MAX_REMINDER_LENGTH = 9000
 
 
 @app_commands.context_menu(name="Remind Me this Message")
