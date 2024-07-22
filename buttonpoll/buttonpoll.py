@@ -137,12 +137,16 @@ class ButtonPoll(commands.Cog):
         channel="Channel to start the poll in.",
         question="Question to ask.",
         description="An optional description.",
-        duration="Duration of the poll. Examples: 1 day, 1 minute, 4 hours",
+        duration="Duration of the poll. Examples: 2 days, 1 minute, 4 hours",
         choice1="First choice.",
         choice2="Second choice.",
         choice3="Optional third choice.",
         choice4="Optional fourth choice.",
         choice5="Optional fifth choice.",
+        choice6="Optional sixth choice.",
+        choice7="Optional seventh choice.",
+        choice8="Optional eighth choice.",
+        choice9="Optional ninth choice.",
     )
     @app_commands.command(name="poll", description="Start a button-based poll.")
     async def poll_slash(
@@ -157,25 +161,29 @@ class ButtonPoll(commands.Cog):
         choice3: Optional[app_commands.Range[str, 1, 80]],
         choice4: Optional[app_commands.Range[str, 1, 80]],
         choice5: Optional[app_commands.Range[str, 1, 80]],
+        choice6: Optional[app_commands.Range[str, 1, 80]],
+        choice7: Optional[app_commands.Range[str, 1, 80]],
+        choice8: Optional[app_commands.Range[str, 1, 80]],
+        choice9: Optional[app_commands.Range[str, 1, 80]],
     ):
         try:
             parsed_duration = parse_timedelta(duration or "")
         except Exception:
             await interaction.response.send_message(
-                "Invalid time format. Please use a valid time format, for example `1 day`, "
+                "Invalid time format. Please use a valid time format, for example `2 days`, "
                 "`1 minute`, `4 hours`.",
                 ephemeral=True,
             )
             return
         if parsed_duration is None:
             await interaction.response.send_message(
-                "Invalid time format. Please use a valid time format, for example `1 day`, "
+                "Invalid time format. Please use a valid time format, for example `2 days`, "
                 "`1 minute`, `4 hours`.",
                 ephemeral=True,
             )
             return
 
-        str_options: set[str | None] = {choice1, choice2, choice3, choice4, choice5}
+        str_options: set[str | None] = {choice1, choice2, choice3, choice4, choice5, choice6, choice7, choice8, choice9}
         str_options.discard(None)
         if len(str_options) < 2:
             await interaction.response.send_message(
